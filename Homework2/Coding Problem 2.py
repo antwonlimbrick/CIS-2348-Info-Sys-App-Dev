@@ -32,6 +32,7 @@ def get_month(monthString):
         return month
 
 input_file=open("inputDates.txt", 'r')
+output_file=open("parsedDates.txt",'w')
 
 user_string = input()
     
@@ -44,7 +45,12 @@ if __name__ == '__main__':
     for i in string1:
         if len(i.split()) > 1:
             if ',' in i.split()[1]:
-                print('{}/{}/{}'.format(get_month(i.split()[0]), i.split()[1][:-1], i.split()[2]))
-                
+                output_file.write('{}/{}/{}'.format(get_month(i.split()[0]), i.split()[1][:-1], i.split()[2]))
+                output_file.write("\n")
+output_file.close()
+input_file.close()
+
+              
+        
                 
 
