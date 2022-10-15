@@ -31,14 +31,16 @@ def get_month(monthString):
             month = 0
         return month
 
+input_file=open("inputDates.txt", 'r')
+
 user_string = input()
     
 if __name__ == '__main__':
     string1=[]
     string2=[]
-    while user_string != "-1":
-        string1.append(user_string)
-        user_string = input()
+    while input_file != "-1":
+        string1.append(input_file)
+        input_file = input()
     for i in string1:
         if len(i.split()) > 1:
             if ',' in i.split()[1]:
